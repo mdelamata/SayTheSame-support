@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SayTheSame — Think Alike. Play Together.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <meta property="og:title" content="SayTheSame — Think Alike. Play Together." />
+  <meta property="og:description" content="The word game where you and a friend try to think of the same word. Private, simple, no strangers." />
+  <meta property="og:image" content="https://saythesame-9b84b.web.app/preview.png" />
+  <meta property="og:url" content="https://saythesame-9b84b.web.app" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #161616;
+      --surface2: #1e1e1e;
+      --teal: #00bcd4;
+      --teal-soft: rgba(0,188,212,0.15);
+      --orange: #ff6b35;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.5);
+      --border: rgba(255,255,255,0.08);
+      --radius: 24px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; }
+    .logo { font-size: 1.4rem; font-weight: 900; color: var(--teal); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-weight: 700; font-size: 0.9rem; padding: 8px 16px; border-radius: 50px; transition: all 0.2s; }
+    .nav-links a:hover { color: var(--text); background: var(--surface2); }
+    .hero { text-align: center; padding: 80px 0 60px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); background: var(--teal-soft); padding: 8px 18px; border-radius: 50px; margin-bottom: 32px; }
+    h1 { font-size: clamp(3.2rem, 9vw, 6.5rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.0; margin-bottom: 24px; }
+    h1 .highlight { color: var(--teal); }
+    .hero-sub { font-size: 1.2rem; color: var(--muted); max-width: 480px; margin: 0 auto 40px; line-height: 1.7; font-weight: 600; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 10px; padding: 18px 36px; background: var(--teal); color: #000; border-radius: 50px; font-weight: 900; font-size: 1.05rem; text-decoration: none; letter-spacing: -0.01em; box-shadow: 0 8px 32px rgba(0,188,212,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+    .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,188,212,0.45); }
+    .section { padding: 72px 0; border-top: 1px solid var(--border); }
+    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 40px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .step { background: var(--surface); padding: 32px 28px; border-radius: var(--radius); border: 1px solid var(--border); position: relative; overflow: hidden; }
+    .step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); opacity: 0.4; }
+    .step-num { font-size: 3.5rem; font-weight: 900; color: rgba(0,188,212,0.12); line-height: 1; margin-bottom: 20px; letter-spacing: -0.04em; }
+    .step h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; }
+    .step p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; font-weight: 600; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 72px 0; border-top: 1px solid var(--border); }
+    .feature { background: var(--surface); padding: 32px 28px; border-radius: var(--radius); border: 1px solid var(--border); transition: border-color 0.2s, transform 0.2s; }
+    .feature:hover { border-color: rgba(0,188,212,0.4); transform: translateY(-4px); }
+    .feature .icon { font-size: 2rem; margin-bottom: 20px; display: block; }
+    .feature h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 10px; }
+    .feature p { color: var(--muted); font-size: 0.9rem; line-height: 1.65; font-weight: 600; }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer p { color: var(--muted); font-size: 0.88rem; font-weight: 600; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 700; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+    @media (max-width: 700px) {
+      .steps, .features { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">SayTheSame</a>
+      <div class="nav-links">
+        <a href="support.html">Support</a>
+        <a href="privacy-policy.html">Privacy</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-badge">🎯 Now on the App Store</div>
+      <h1>Think Alike.<br><span class="highlight">Play Together.</span></h1>
+      <p class="hero-sub">You and a friend each write a word. Can you both think of the same one? No strangers, no chat — just words.</p>
+      <a href="https://apps.apple.com/app/id6760703530" class="hero-cta">Download on App Store →</a>
+    </section>
+
+    <section class="section">
+      <div class="section-label">How it works</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Start a game</h3>
+          <p>Create a match and share the invite link with a friend via WhatsApp, iMessage, or a QR code.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Submit your word</h3>
+          <p>Each round, you and your friend secretly submit a word. No peeking until you've both answered.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Match = you win!</h3>
+          <p>If your words match, you win! If not, see both words and use them as hints for the next round.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="feature">
+        <span class="icon">🔒</span>
+        <h3>Private by design</h3>
+        <p>No friend lists, no public lobbies, no strangers. You only play with people you explicitly invite.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🍎</span>
+        <h3>Sign in with Apple</h3>
+        <p>One tap to get started. Hide your email if you want — we only need a unique ID to sync your games.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🗑️</span>
+        <h3>Delete everything, anytime</h3>
+        <p>Your data belongs to you. Delete your account from the app and everything is gone instantly.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 SayTheSame. Built with 🤍</p>
+      <div class="footer-links">
+        <a href="support.html">Support</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

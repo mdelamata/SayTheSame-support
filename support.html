@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — SayTheSame</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #161616;
+      --surface2: #1e1e1e;
+      --teal: #00bcd4;
+      --teal-soft: rgba(0,188,212,0.12);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.55);
+      --border: rgba(255,255,255,0.08);
+      --radius: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+    .nav-link { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 700; margin-bottom: 52px; padding: 8px 16px; background: var(--surface); border-radius: 50px; border: 1px solid var(--border); transition: all 0.2s; }
+    .nav-link:hover { color: var(--teal); border-color: rgba(0,188,212,0.3); }
+    h1 { font-size: 3rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 12px; }
+    .intro { color: var(--muted); font-size: 1.1rem; font-weight: 600; margin-bottom: 56px; line-height: 1.65; }
+    .faq-group { margin-bottom: 52px; }
+    .group-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .faq-item { padding: 24px 0; border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-item h3 { font-size: 1rem; font-weight: 800; margin-bottom: 10px; color: var(--text); letter-spacing: -0.01em; }
+    .faq-item p { color: var(--muted); font-size: 0.93rem; font-weight: 600; line-height: 1.7; }
+    .faq-item a { color: var(--teal); text-decoration: none; }
+    .faq-item a:hover { text-decoration: underline; }
+    strong { color: var(--text); font-weight: 800; }
+    .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 44px 40px; text-align: center; margin-top: 56px; }
+    .contact-card h2 { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .contact-card p { color: var(--muted); font-size: 0.97rem; font-weight: 600; max-width: 380px; margin: 0 auto 28px; line-height: 1.7; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--teal); color: #000; text-decoration: none; border-radius: 50px; font-weight: 900; font-size: 0.97rem; letter-spacing: -0.01em; box-shadow: 0 6px 24px rgba(0,188,212,0.25); transition: transform 0.2s, box-shadow 0.2s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,188,212,0.4); }
+    footer { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer p { color: var(--muted); font-size: 0.85rem; font-weight: 600; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="nav-link">← Home</a>
+
+    <h1>Support</h1>
+    <p class="intro">Answers to common questions. If you can't find what you need, email us directly.</p>
+
+    <!-- Gameplay -->
+    <div class="faq-group">
+      <div class="group-label">Gameplay</div>
+
+      <div class="faq-item">
+        <h3>How do I invite someone to play?</h3>
+        <p>Start a new game and share the invite link via WhatsApp, iMessage, or any other app. You can also show a QR code — your friend scans it and joins instantly. There are no friend lists or public lobbies by design.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What's the goal of the game?</h3>
+        <p>Each round, you and your friend each submit a word independently. If you both write the same word, you win. If not, you see both words and try again next round — hopefully using the previous words as hints to converge.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What happens if my friend doesn't respond?</h3>
+        <p>There's no time limit — play at your own pace. If needed, you can abandon a game from the match options menu (the ··· button inside the game).</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I play multiple games at once?</h3>
+        <p>Yes — you can have as many active games as you like, each with a different friend.</p>
+      </div>
+    </div>
+
+    <!-- Account -->
+    <div class="faq-group">
+      <div class="group-label">Account & Privacy</div>
+
+      <div class="faq-item">
+        <h3>How do I sign in?</h3>
+        <p>SayTheSame uses <strong>Sign in with Apple</strong>. You can hide your real email — we only need a unique ID to keep your games in sync across your devices.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete my account?</h3>
+        <p>Go to <strong>Profile → Delete Account</strong> inside the app. All your data — alias, games, words, push token — is permanently deleted immediately. This action cannot be undone.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What data do you store about me?</h3>
+        <p>Only what's needed to run the game: your Apple ID, display name, game history, and push notification token. We don't collect location, contacts, or browsing data. Read our full <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I change my display name?</h3>
+        <p>Yes — go to your <strong>Profile</strong> tab and tap your alias to edit it.</p>
+      </div>
+    </div>
+
+    <!-- Technical -->
+    <div class="faq-group">
+      <div class="group-label">Technical</div>
+
+      <div class="faq-item">
+        <h3>I'm not receiving push notifications</h3>
+        <p>Make sure notifications are enabled in <strong>iOS Settings → Notifications → SayTheSame</strong>. If they're on but still not arriving, try signing out and back in to refresh your push token.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>The invite link isn't opening the app</h3>
+        <p>Make sure you have the latest version of SayTheSame installed. If the link opens a webpage, tap the <strong>"Open SayTheSame"</strong> button on that page.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>The app isn't showing my latest games</h3>
+        <p>Pull down on the matches list to force a refresh. If the issue persists, close and reopen the app.</p>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h2>Still need help?</h2>
+      <p>Send us an email with a description of your issue and your iOS version. We'll get back to you as soon as we can.</p>
+      <a href="mailto:support@saythesame.app" class="btn">✉ Email Support</a>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 SayTheSame</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
